@@ -6,9 +6,10 @@ mat-form-field {
   display: block;
 }
 .login-container {
-  width: 600px;
+  display: flex;
   justify-content: center;
-  margin: auto;
+  align-items: center;
+  height: 60vh;
 }
 mat-card-actions {
   justify-content: center;

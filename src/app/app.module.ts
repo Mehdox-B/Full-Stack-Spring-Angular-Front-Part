@@ -31,6 +31,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsComponent } from './students/students.component';
 import { LoadStudentsComponent } from './load-students/load-students.component';
 import { LoadPaymentsComponent } from './load-payments/load-payments.component';
+import { AuthGuard } from './guards/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { LoadPaymentsComponent } from './load-payments/load-payments.component';
     StudentsComponent,
     LoadStudentsComponent,
     LoadPaymentsComponent,
+    NotFoundComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,8 +68,9 @@ import { LoadPaymentsComponent } from './load-payments/load-payments.component';
     MatInputModule,
     MatFormField,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

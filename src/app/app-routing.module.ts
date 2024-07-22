@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoadPaymentsComponent } from './load-payments/load-payments.component';
 import { LoadStudentsComponent } from './load-students/load-students.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminTemplateComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'home',
@@ -52,6 +55,10 @@ const routes: Routes = [
         component: LoadPaymentsComponent,
       },
     ],
+  },
+  {
+    path: '**',
+    component: NotFoundComponentComponent,
   },
 ];
 
