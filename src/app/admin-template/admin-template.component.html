@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/admin/home">Home</button>
+  <button mat-button routerLink="/admin/profile">Profile</button>
+  <button mat-button [matMenuTriggerFor]="importMenu">
+    <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+    Import
+  </button>
+  <mat-menu #importMenu>
+    <button mat-menu-item routerLink="/admin/load-students">
+      Load Students
+    </button>
+    <button mat-menu-item routerLink="/admin/load-payments">
+      Load Payments
+    </button>
+  </mat-menu>
+  <button mat-button *ngIf="autService.authStatus === true">
+    {{ autService.username }}
+  </button>
+  <button
+    mat-raised-button
+    (click)="logOut()"
+    color="accent"
+    routerLink="/logout"
+  >
+    Logout
+  </button>
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side" position="start" opened="true">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/dashboard">
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/students">
+          <mat-icon>school</mat-icon>
+          Students
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/payments">
+          <mat-icon>payment</mat-icon>
+          Payments
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 700px">
+      <router-outlet> </router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

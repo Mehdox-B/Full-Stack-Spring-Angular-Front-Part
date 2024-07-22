@@ -1,0 +1,15 @@
+mat-card-header {
+  background-color: aquamarine;
+}
+mat-form-field {
+  margin-top: 10px;
+  display: block;
+}
+.login-container {
+  width: 600px;
+  justify-content: center;
+  margin: auto;
+}
+mat-card-actions {
+  justify-content: center;
+}
