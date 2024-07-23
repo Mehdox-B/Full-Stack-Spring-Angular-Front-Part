@@ -11,6 +11,7 @@ import { LoadStudentsComponent } from './load-students/load-students.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { rolesProtectionGuard } from './guards/roles-protection.guard';
 
 const routes: Routes = [
   {
@@ -49,10 +50,18 @@ const routes: Routes = [
       {
         path: 'load-students',
         component: LoadStudentsComponent,
+        canActivate: [rolesProtectionGuard],
+        data: {
+          roles: ['Admin'],
+        },
       },
       {
         path: 'load-payments',
         component: LoadPaymentsComponent,
+        canActivate: [rolesProtectionGuard],
+        data: {
+          roles: ['Admin'],
+        },
       },
     ],
   },

@@ -34,6 +34,7 @@ import { LoadPaymentsComponent } from './load-payments/load-payments.component';
 import { AuthGuard } from './guards/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { rolesProtectionGuard } from './guards/roles-protection.guard';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, rolesProtectionGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
