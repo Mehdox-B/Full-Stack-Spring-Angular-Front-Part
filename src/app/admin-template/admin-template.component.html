@@ -5,7 +5,11 @@
   <span class="spacer"></span>
   <button mat-button routerLink="/admin/home">Home</button>
   <button mat-button routerLink="/admin/profile">Profile</button>
-  <button mat-button [matMenuTriggerFor]="importMenu">
+  <button
+    mat-button
+    [matMenuTriggerFor]="importMenu"
+    *ngIf="autService.userRoles.includes('Admin')"
+  >
     <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
     Import
   </button>
