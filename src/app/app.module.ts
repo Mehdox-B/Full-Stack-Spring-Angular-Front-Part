@@ -35,6 +35,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { rolesProtectionGuard } from './guards/roles-protection.guard';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { rolesProtectionGuard } from './guards/roles-protection.guard';
     MatFormField,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [AuthGuard, rolesProtectionGuard],
   bootstrap: [AppComponent],

@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.loginFormGroup = this.fbuilder.group({
-      username: this.fbuilder.control(''),
-      password: this.fbuilder.control(''),
+      username: this.fbuilder.control(''), //Default Value is '' , empty string
+      password: this.fbuilder.control(''), //Default Value is '' , empty string
     });
   }
   public login = (): void => {
