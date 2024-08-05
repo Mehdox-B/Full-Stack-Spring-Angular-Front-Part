@@ -12,6 +12,8 @@ import { AdminTemplateComponent } from './admin-template/admin-template.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { rolesProtectionGuard } from './guards/roles-protection.guard';
+import { StudentsInfosComponent } from './students-infos/students-infos.component';
+import { NewPaymentComponent } from './new-payment/new-payment.component';
 
 const routes: Routes = [
   {
@@ -58,6 +60,22 @@ const routes: Routes = [
       {
         path: 'load-payments',
         component: LoadPaymentsComponent,
+        canActivate: [rolesProtectionGuard],
+        data: {
+          roles: ['Admin'],
+        },
+      },
+      {
+        path: 'student_Infos/:code', //Route with code paramater
+        component: StudentsInfosComponent,
+        canActivate: [rolesProtectionGuard],
+        data: {
+          roles: ['Admin'],
+        },
+      },
+      {
+        path: 'new_payment/:code',
+        component: NewPaymentComponent,
         canActivate: [rolesProtectionGuard],
         data: {
           roles: ['Admin'],

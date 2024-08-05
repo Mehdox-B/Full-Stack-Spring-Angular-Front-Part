@@ -18,6 +18,8 @@ import {
   MatFormField,
 } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +38,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { rolesProtectionGuard } from './guards/roles-protection.guard';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { StudentsInfosComponent } from './students-infos/students-infos.component';
+import { NewPaymentComponent } from './new-payment/new-payment.component';
+import { MatNativeDateModule, MatOption } from '@angular/material/core';
+import { MatSelect } from '@angular/material/select';
+import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +56,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoadStudentsComponent,
     LoadPaymentsComponent,
     NotFoundComponentComponent,
+    StudentsInfosComponent,
+    NewPaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +80,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelect,
+    MatOption,
+    PdfViewerModule,
+    MatProgressSpinnerModule,
   ],
   providers: [AuthGuard, rolesProtectionGuard],
   bootstrap: [AppComponent],
