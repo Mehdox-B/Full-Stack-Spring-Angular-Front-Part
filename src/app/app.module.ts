@@ -43,6 +43,7 @@ import { NewPaymentComponent } from './new-payment/new-payment.component';
 import { MatNativeDateModule, MatOption } from '@angular/material/core';
 import { MatSelect } from '@angular/material/select';
 import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
     NotFoundComponentComponent,
     StudentsInfosComponent,
     NewPaymentComponent,
+    PaymentDetailsComponent,
   ],
   imports: [
     BrowserModule,

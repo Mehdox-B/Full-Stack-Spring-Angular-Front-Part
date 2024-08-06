@@ -55,7 +55,11 @@
       <button mat-raised-button (click)="savePayment()" color="primary">
         Save Payment
       </button>
-      <mat-spinner *ngIf="!pdfFileUrl"></mat-spinner>
+      <mat-spinner
+        class="mat-spinner"
+        [diameter]="40"
+        *ngIf="!pdfFileUrl"
+      ></mat-spinner>
     </mat-card-actions>
   </mat-card>
   <mat-card *ngIf="pdfFileUrl">

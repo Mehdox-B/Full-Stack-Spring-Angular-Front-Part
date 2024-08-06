@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Payment File Details </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <pdf-viewer
+        [src]="pdfFileUrl"
+        [original-size]="true"
+        [render-text]="true"
+        [rotation]="0"
+        [show-all]="true"
+        [zoom]="1"
+        [zoom-scale]="'page-fit'"
+        [show-borders]="true"
+        class="pdf-viewer"
+        (after-load-complete)="afterLoadComplete($event)"
+      >
+      </pdf-viewer>
+    </mat-card-content>
+  </mat-card>
+</div>

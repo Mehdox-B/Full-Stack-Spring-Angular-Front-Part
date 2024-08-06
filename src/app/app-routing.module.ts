@@ -14,6 +14,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { rolesProtectionGuard } from './guards/roles-protection.guard';
 import { StudentsInfosComponent } from './students-infos/students-infos.component';
 import { NewPaymentComponent } from './new-payment/new-payment.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,14 @@ const routes: Routes = [
       {
         path: 'new_payment/:code',
         component: NewPaymentComponent,
+        canActivate: [rolesProtectionGuard],
+        data: {
+          roles: ['Admin'],
+        },
+      },
+      {
+        path: 'payment_details/:payment_code',
+        component: PaymentDetailsComponent,
         canActivate: [rolesProtectionGuard],
         data: {
           roles: ['Admin'],

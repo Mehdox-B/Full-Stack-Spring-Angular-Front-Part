@@ -30,4 +30,10 @@ export class StudentSvcService {
       formData
     );
   }
+  public getPaymentDetails(paymentId: number): Observable<Blob> {
+    return this.http.get(
+      `${environment.backend_Host}/paymentFile/${paymentId}`,
+      { responseType: 'blob' }
+    );
+  }
 }

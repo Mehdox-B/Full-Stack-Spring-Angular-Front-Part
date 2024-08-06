@@ -23,6 +23,7 @@ export class StudentsInfosComponent implements OnInit {
     'type',
     'status',
     'amount',
+    'payment_details',
   ];
   paymentDataSource!: MatTableDataSource<Payment>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -55,5 +56,8 @@ export class StudentsInfosComponent implements OnInit {
   }
   public newPayment(): void {
     this.router.navigateByUrl(`admin/new_payment/${this.studentCode}`);
+  }
+  public getPaymentsDetails(element: Payment) {
+    this.router.navigateByUrl(`/admin/payment_details/${element.id}`);
   }
 }
